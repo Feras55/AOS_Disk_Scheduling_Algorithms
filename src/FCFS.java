@@ -9,7 +9,6 @@ public class FCFS extends Scheduling_Algorithm {
 
     @Override
     public void runAlgorithm(){
-        outputSequence.add(initialHeadPosition);
         int cur = initialHeadPosition;
         for (int i = 0; i < requestQueue.size(); i++) {
             totalHeadMovement+=Math.abs(cur - requestQueue.get(i));

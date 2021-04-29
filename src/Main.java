@@ -19,8 +19,12 @@ public class Main {
         Scheduling_Algorithm sB = new SSTF(arr,init);
         sB.runAlgorithm();
         System.out.println("SCAN: ");
-        Scheduling_Algorithm sC = new Scan(arr,init,"right",200);
+        Scheduling_Algorithm sC = new Scan(arr,init,"left",200);
         sC.runAlgorithm();
+        System.out.println("C-SCAN: ");
+        Scheduling_Algorithm sD = new C_Scan(arr,init,"right",200);
+        sD.runAlgorithm();
+
 
     }
 }

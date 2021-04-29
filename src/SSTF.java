@@ -14,7 +14,6 @@ public class SSTF extends Scheduling_Algorithm{
             Request r = new Request((int)requestQueue.get(i));
             queue.add(r);
         }
-        outputSequence.add(initialHeadPosition);
         int cur = initialHeadPosition;
         for (int i = 0; i < queue.size(); i++) {
             int mini = (int) 1e6, pos = -1; //pointers to point at the shortest seek time request from the cur position

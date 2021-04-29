@@ -1,3 +1,14 @@
+/**
+ * This program implements all the disk-scheduling Algorithms: (FCFS, SSTF, SCAN, C-SCAN, LOOK, C-LOOK) as well as
+ * a newly optimized algorithm (no uniform title for the algorithm yet).
+ *
+ * @Author: Fares.G Mahmoud
+ * @version: 1.0
+ *
+ * @since 4-30-2021
+ *
+ */
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -30,6 +41,9 @@ public class Main {
         System.out.println("C-LOOK: ");
         Scheduling_Algorithm sF = new C_Look(arr,init,"right");
         sF.runAlgorithm();
+        System.out.println("Newly Optimized Algorithm: ");
+        Scheduling_Algorithm sG = new New_Optimized(arr);
+        sG.runAlgorithm();
 
 
 

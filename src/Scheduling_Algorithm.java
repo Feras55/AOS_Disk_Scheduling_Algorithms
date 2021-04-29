@@ -12,6 +12,10 @@ abstract public class Scheduling_Algorithm {
         this.initialHeadPosition = initialHeadPosition;
     }
 
+    public Scheduling_Algorithm(ArrayList<Integer> requestQueue) {
+        this.requestQueue = requestQueue;
+    }
+
     abstract public void runAlgorithm();
 
     public void printResults(){

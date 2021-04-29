@@ -12,7 +12,11 @@ public class Main {
             arr.add(num);
         }
         init = sc.nextInt();
-        Scheduling_Algorithm sA = new FCFS(sz,arr,init);
+        System.out.println("FCFS: ");
+        Scheduling_Algorithm sA = new FCFS(arr,init);
         sA.runAlgorithm();
+        System.out.println("SSTF: ");
+        Scheduling_Algorithm sB = new SSTF(arr,init);
+        sB.runAlgorithm();
     }
 }

@@ -3,10 +3,11 @@ import java.util.ArrayList;
 public class FCFS extends Scheduling_Algorithm {
 
 
-    public FCFS(int size, ArrayList<Integer> requestQueue, int initialHeadPosition) {
-        super(size, requestQueue, initialHeadPosition);
+    public FCFS(ArrayList<Integer> requestQueue, int initialHeadPosition) {
+        super(requestQueue, initialHeadPosition);
     }
 
+    @Override
     public void runAlgorithm(){
         outputSequence.add(initialHeadPosition);
         int cur = initialHeadPosition;
@@ -15,7 +16,7 @@ public class FCFS extends Scheduling_Algorithm {
             cur = requestQueue.get(i);
             outputSequence.add(cur);
         }
-        showResults();
+        printResults();
     }
 
     public static void main(String[] args) {

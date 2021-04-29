@@ -1,24 +1,17 @@
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class Scan extends Scheduling_Algorithm {
-    String direction;
-    int diskSize;
-    public Scan(ArrayList<Integer> requestQueue, int initialHeadPosition, String direction, int diskSize) {
-        super(requestQueue, initialHeadPosition);
-        this.direction = direction.toLowerCase();
-        this.diskSize  = diskSize;
-    }
+public class Look extends  Scan {
 
-    public Scan(ArrayList<Integer> requestQueue, int initialHeadPosition, String direction) {
-        super(requestQueue, initialHeadPosition);
-        this.direction = direction;
+
+    public Look(ArrayList<Integer> requestQueue, int initialHeadPosition, String direction) {
+        super(requestQueue, initialHeadPosition, direction);
     }
 
     @Override
-    public void runAlgorithm() {
-    ArrayList<Integer> leftQueue = new ArrayList<>();
-    ArrayList<Integer> rightQueue = new ArrayList<>();
+    public void runAlgorithm(){
+        ArrayList<Integer> leftQueue = new ArrayList<>();
+        ArrayList<Integer> rightQueue = new ArrayList<>();
         for (int i = 0; i < requestQueue.size(); i++) {
             int pos = requestQueue.get(i);
             if (pos < initialHeadPosition) {
@@ -26,11 +19,6 @@ public class Scan extends Scheduling_Algorithm {
             } else {
                 rightQueue.add(pos);
             }
-        }
-        if(direction=="left"){
-            leftQueue.add(0);
-        }else{
-            rightQueue.add(diskSize);
         }
 
         Collections.sort(leftQueue);
@@ -64,9 +52,5 @@ public class Scan extends Scheduling_Algorithm {
 
 
         printResults();
-
     }
-
-
-
 }

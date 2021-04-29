@@ -24,6 +24,13 @@ public class Main {
         System.out.println("C-SCAN: ");
         Scheduling_Algorithm sD = new C_Scan(arr,init,"right",200);
         sD.runAlgorithm();
+        System.out.println("LOOK: ");
+        Scheduling_Algorithm sE = new Look(arr,init,"right");
+        sE.runAlgorithm();
+        System.out.println("C-LOOK: ");
+        Scheduling_Algorithm sF = new C_Look(arr,init,"right");
+        sF.runAlgorithm();
+
 
 
     }

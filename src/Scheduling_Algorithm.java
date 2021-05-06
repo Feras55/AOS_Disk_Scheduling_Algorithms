@@ -22,6 +22,7 @@ abstract public class Scheduling_Algorithm {
         System.out.println("Initial Head Position: " + initialHeadPosition);
         System.out.println("Total Head Movement: " + totalHeadMovement);
         System.out.println("Head movement Sequence: "  + outputSequence.toString());
+        System.out.println();
     }
 
     public static void main(String[] args) {

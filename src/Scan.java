@@ -6,7 +6,7 @@ public class Scan extends Scheduling_Algorithm {
     int diskSize;
     public Scan(ArrayList<Integer> requestQueue, int initialHeadPosition, String direction, int diskSize) {
         super(requestQueue, initialHeadPosition);
-        this.direction = direction.toLowerCase();
+        this.direction = direction;
         this.diskSize  = diskSize;
     }
 
@@ -27,7 +27,7 @@ public class Scan extends Scheduling_Algorithm {
                 rightQueue.add(pos);
             }
         }
-        if(direction=="left"){
+        if(direction.equals("left")){
             leftQueue.add(0);
         }else{
             rightQueue.add(diskSize);
@@ -38,7 +38,7 @@ public class Scan extends Scheduling_Algorithm {
 
         int curHead = initialHeadPosition; //current head
         for (int i = 0; i < 2; i++) { //runs two times to cover each direction
-            if(direction == "right"){
+            if(direction.equals("right")){
                 for (int j = 0; j < rightQueue.size(); j++) {
                     int cur = rightQueue.get(j); //current request serviced
                     totalHeadMovement += Math.abs(curHead - cur);

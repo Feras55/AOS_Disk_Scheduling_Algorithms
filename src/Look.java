@@ -26,7 +26,7 @@ public class Look extends  Scan {
 
         int curHead = initialHeadPosition; //current head
         for (int i = 0; i < 2; i++) { //runs two times to cover each direction
-            if(direction == "right"){
+            if(direction.equals( "right")){
                 for (int j = 0; j < rightQueue.size(); j++) {
                     int cur = rightQueue.get(j); //current request serviced
                     totalHeadMovement += Math.abs(curHead - cur);

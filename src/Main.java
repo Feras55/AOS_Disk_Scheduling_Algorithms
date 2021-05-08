@@ -22,7 +22,7 @@ public class Main {
         ArrayList<Integer> arr = new ArrayList<>();
         int sz,num,init,ch,diskSize;
         String direction = new String();
-        File inputFile = new File("D:\\College\\Year-3\\Second Semester\\Advanced Operating Systems\\Assignments\\Assignment 2\\Disk_Scheduling\\AOS_Disk_Scheduling_Algorithms\\src\\input.txt");
+        File inputFile = new File("/home/shawky/IdeaProjects/AOS_Disk_Scheduling_Algorithms/src/input.txt");
 
         Scanner sc = null, sch = null;
         System.out.println("Choose the input method: 1 - Console   2 - File ");

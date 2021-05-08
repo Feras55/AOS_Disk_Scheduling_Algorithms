@@ -17,6 +17,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
+    //testing GIT
     public static void main(String[] args) throws FileNotFoundException {
         ArrayList<Integer> arr = new ArrayList<>();
         int sz,num,init,ch,diskSize;

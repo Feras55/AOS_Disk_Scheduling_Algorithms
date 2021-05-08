@@ -25,7 +25,7 @@ abstract public class Scheduling_Algorithm {
         System.out.println();
         GraphDrawer graphDrawer = new GraphDrawer(outputSequence);
         graphDrawer.setSize(500,500);
-        graphDrawer.setResizable(!false);
+        graphDrawer.setResizable(false);
         graphDrawer.setVisible(true);
 
     }

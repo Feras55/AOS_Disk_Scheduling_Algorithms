@@ -22,10 +22,10 @@ public class Main {
         ArrayList<Integer> arr = new ArrayList<>();
         int sz,num,init,ch,diskSize;
         String direction = new String();
-        File inputFile = new File("/home/shawky/IdeaProjects/AOS_Disk_Scheduling_Algorithms/src/input.txt");
+        File inputFile = new File("D:\\College\\Year-3\\Second Semester\\Advanced Operating Systems\\Assignments\\Assignment 2\\Disk_Scheduling\\AOS_Disk_Scheduling_Algorithms\\src\\input.txt");
 
         Scanner sc = null, sch = null;
-        System.out.println("Choose the input method: 1 - Console   2 - File ");
+        System.out.println("Choose the input method or quit: 1 - Console   2 - File ");
         sch = new Scanner(System.in);
         ch = sch.nextInt();
         if(ch == 1){
@@ -33,6 +33,7 @@ public class Main {
         }else if(ch == 2){
             sc = new Scanner(inputFile);
         }
+
         System.out.println("Enter number of requests");
         sz = sc.nextInt();
         System.out.println("Enter " + sz + " requests");
@@ -43,47 +44,61 @@ public class Main {
         System.out.println("Enter initial head position");
         init = sc.nextInt();
 
-        System.out.println("Enter disk size (For SCAN, C-SCAN Algorithms)");
-        diskSize = sc.nextInt();
+        System.out.println("Choose Algorithm to run: \n" +
+                "1. FCFS\t 2. SSTF\t 3. SCAN\t 4.C-SCAN \n" +
+                "5. LOOK\t 6.C-LOOK\t 7. Newly Optimized Algorithm");
+        ch = sc.nextInt();
 
-        System.out.println("Enter Direction (For SCAN, C-SCAN, LOOK, and C-LOOK Algorithms)");
-        direction = sc.next();
-        //Testing Algorithms
-        ///Testing FCFS
-        System.out.println("FCFS: ");
-        Scheduling_Algorithm sA = new FCFS(arr,init);
-        sA.runAlgorithm();
-
-        ///Testing SSTF
-        System.out.println("SSTF: ");
-        Scheduling_Algorithm sB = new SSTF(arr,init);
-        sB.runAlgorithm();
-
-        ///Testing SCAN
-        System.out.println("SCAN: ");
-        Scheduling_Algorithm sC = new Scan(arr,init,direction,diskSize);
-        sC.runAlgorithm();
-
-        ///Testing C-SCAN
-        System.out.println("C-SCAN: ");
-        Scheduling_Algorithm sD = new C_Scan(arr,init,direction,diskSize);
-        sD.runAlgorithm();
-
-        ///Testing LOOK
-        System.out.println("LOOK: ");
-        Scheduling_Algorithm sE = new Look(arr,init,direction);
-        sE.runAlgorithm();
-
-        ///Testing C-LOOK
-        System.out.println("C-LOOK: ");
-        Scheduling_Algorithm sF = new C_Look(arr,init,direction);
-        sF.runAlgorithm();
-
-        ///Testing Newly Optimized Algorithm
-        System.out.println("Newly Optimized Algorithm: ");
-        Scheduling_Algorithm sG = new New_Optimized(arr);
-        sG.runAlgorithm();
-
+        switch (ch){
+            case 1:
+                System.out.println("FCFS: ");
+                Scheduling_Algorithm sA = new FCFS(arr,init);
+                sA.runAlgorithm();
+                break;
+            case 2:
+                System.out.println("SSTF: ");
+                Scheduling_Algorithm sB = new SSTF(arr,init);
+                sB.runAlgorithm();
+                break;
+            case 3:
+                System.out.println("Enter disk size");
+                diskSize = sc.nextInt();
+                System.out.println("Enter Direction");
+                direction = sc.next();
+                System.out.println("SCAN: ");
+                Scheduling_Algorithm sC = new Scan(arr,init,direction,diskSize);
+                sC.runAlgorithm();
+                break;
+            case 4:
+                System.out.println("Enter disk size");
+                diskSize = sc.nextInt();
+                System.out.println("Enter Direction");
+                direction = sc.next();
+                System.out.println("C-SCAN: ");
+                Scheduling_Algorithm sD = new C_Scan(arr,init,direction,diskSize);
+                sD.runAlgorithm();
+                break;
+            case 5:
+                System.out.println("Enter Direction");
+                direction = sc.next();
+                System.out.println("LOOK: ");
+                Scheduling_Algorithm sE = new Look(arr,init,direction);
+                sE.runAlgorithm();
+                break;
+            case 6:
+                System.out.println("Enter Direction");
+                direction = sc.next();
+                System.out.println("C-LOOK: ");
+                Scheduling_Algorithm sF = new C_Look(arr,init,direction);
+                sF.runAlgorithm();
+                break;
+            case 7:
+                System.out.println("Newly Optimized Algorithm: ");
+                Scheduling_Algorithm sG = new New_Optimized(arr);
+                sG.runAlgorithm();
+            default:
+                break;
+        }
 
 
     }

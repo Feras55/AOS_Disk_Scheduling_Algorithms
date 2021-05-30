@@ -18,13 +18,15 @@ public class GraphDrawer extends JFrame {
         int y = 150;
         int i,x = 15;
         int scale = 2;
-        for (i = 0; i < points.size() - 1; ++i)
+        for (i = 0; i < points.size() - 1; ++i){
+
+            this.getGraphics().fillOval(scale*(10+points.get(i))-5, y - 5, 10, 10);
             this.getGraphics().drawLine((int)scale*(10 + points.get(i)), y, (int)scale*(10 + points.get(i + 1)), y += 35);
+        }
         y=150;
         Collections.sort(points);
         for (var point : points) {
             int lg =(int) Math.log10(point);
-            this.getGraphics().fillOval(scale*(10+point)-5, y - 5, 10, 10);
             this.getGraphics().drawLine(scale*(10 + point), 60, scale*(10 + point), 70);
             this.getGraphics().drawString(Integer.toString(point),scale*(10 + point)-lg*5,70+x);
             x*=-1;
